@@ -1,1 +1,52 @@
-
+[
+  {
+    "title": "Lighting Upgrade",
+    "options": [
+      {
+        "name": "Keep old bulbs",
+        "impact": -5,
+        "cost": 0
+      },
+      {
+        "name": "Switch to LED bulbs",
+        "impact": 10,
+        "cost": 20
+      }
+    ]
+  },
+  {
+    "title": "Daily Transport",
+    "options": [
+      {
+        "name": "Use private vehicle",
+        "impact": -10,
+        "cost": 5
+      },
+      {
+        "name": "Use public transport",
+        "impact": 8,
+        "cost": 2
+      },
+      {
+        "name": "Walk or cycle",
+        "impact": 15,
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "title": "Water Usage",
+    "options": [
+      {
+        "name": "Normal usage",
+        "impact": 0,
+        "cost": 0
+      },
+      {
+        "name": "Install water-saving fixtures",
+        "impact": 12,
+        "cost": 25
+      }
+    ]
+  }
+]
