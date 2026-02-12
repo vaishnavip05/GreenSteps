@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 # --------------------------------------------------
 # SAMPLE QUESTIONS (temporary)
 # later we will load from JSON
@@ -34,8 +33,12 @@ def run_survey(age_group):
     questions = QUESTION_BANK.get(age_group, [])
     answers = {}
 
-    for q in questions:
-        answers[q] = st.radio(q, ["Yes", "Sometimes", "No"], key=q)
+    for i, q in enumerate(questions):
+        answers[q] = st.radio(
+            q,
+            ["Yes", "Sometimes", "No"],
+            key=f"{age_group}_{i}"
+        )
 
     if st.button("Submit Survey"):
         return answers
