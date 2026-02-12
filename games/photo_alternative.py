@@ -25,7 +25,8 @@ def photo_alternative_ui():
         )
 
         if st.button("Find Better Option"):
-            df = pd.read_csv("data/products/eco_alternatives.csv")
+            # ✅ corrected path
+            df = pd.read_csv("products/eco_alternatives.csv")
 
             match = df[df["item"] == item_name]
 
