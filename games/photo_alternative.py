@@ -25,7 +25,7 @@ def photo_alternative_ui():
         )
 
         if st.button("Find Better Option"):
-            # ✅ corrected path
+            # read from CSV
             df = pd.read_csv("products/eco_alternatives.csv")
 
             match = df[df["item"] == item_name]
@@ -34,7 +34,7 @@ def photo_alternative_ui():
                 alt = match.iloc[0]["alternative"]
                 benefit = match.iloc[0]["benefit"]
 
-                st.success(f"✅ Try: {alt}")
+                st.success(f"✅ Better choice: {alt}")
                 st.info(f"🌍 Benefit: {benefit}")
 
                 add_score(15)
