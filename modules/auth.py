@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def login_page():
     st.subheader("🔐 Login to GreenSteps")
 
@@ -11,5 +10,4 @@ def login_page():
             st.warning("Please enter your name.")
         else:
             st.session_state.user = username
-            st.success(f"Welcome, {username}! 🌱")
             st.rerun()
