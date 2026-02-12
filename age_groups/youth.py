@@ -1,8 +1,11 @@
-
 import streamlit as st
 
 from modules.scoring import scoring_ui, add_score
 from modules.rewards import rewards_ui, add_points, increase_streak
+
+# ✅ enable features
+from games.photo_alternative import photo_alternative_ui
+from games.outfit_analysis import outfit_analysis_ui
 
 
 def youth_dashboard():
@@ -35,12 +38,10 @@ def youth_dashboard():
 
     # ---------------- PHOTO PROOF ----------------
     st.subheader("📷 Upload Action Proof")
-    st.write("Upload a photo of your eco-friendly action.")
-    st.warning("Upload & AI verification coming soon.")
+    photo_alternative_ui()
 
     st.divider()
 
     # ---------------- OUTFIT / PRODUCT ANALYSIS ----------------
     st.subheader("👕 Smart Alternative Suggestions")
-    st.write("AI will suggest greener choices.")
-    st.warning("Analysis feature coming soon.")
+    outfit_analysis_ui()
