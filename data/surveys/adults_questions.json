@@ -1,1 +1,9 @@
-
+{
+  "questions": [
+    "Do you monitor electricity usage at home?",
+    "Are you interested in reducing monthly bills?",
+    "Would you upgrade appliances for efficiency?",
+    "Do you support environmental causes?",
+    "Do you prefer practical eco solutions?"
+  ]
+}
