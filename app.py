@@ -1,11 +1,11 @@
 import streamlit as st
 
-# import modules
+# modules
 from modules.auth import login_page
 from modules.survey_engine import run_survey
 from modules.profile_engine import build_profile
 
-# import age dashboards
+# age dashboards
 from age_groups.kids import kids_dashboard
 from age_groups.youth import youth_dashboard
 from age_groups.adults import adults_dashboard
@@ -15,10 +15,7 @@ from age_groups.elders import elders_dashboard
 # --------------------------------------------------
 # PAGE CONFIG
 # --------------------------------------------------
-st.set_page_config(
-    page_title="GreenSteps",
-    layout="wide"
-)
+st.set_page_config(page_title="GreenSteps", layout="wide")
 
 
 # --------------------------------------------------
@@ -35,14 +32,14 @@ if "profile_built" not in st.session_state:
 
 
 # --------------------------------------------------
-# APP TITLE
+# TITLE
 # --------------------------------------------------
 st.title("🌱 GreenSteps")
 st.write("Small steps today. Greener planet tomorrow.")
 
 
 # --------------------------------------------------
-# STEP 1 – LOGIN
+# LOGIN
 # --------------------------------------------------
 if not st.session_state.user:
     login_page()
@@ -50,34 +47,34 @@ if not st.session_state.user:
 
 
 # --------------------------------------------------
-# STEP 2 – AGE SELECTION
+# AGE SELECTION
 # --------------------------------------------------
 if not st.session_state.age_group:
     st.subheader("Select your age group")
 
-    col1, col2, col3, col4 = st.columns(4)
+    c1, c2, c3, c4 = st.columns(4)
 
-    with col1:
-        if st.button("👶 5–12"):
-            st.session_state.age_group = "kids"
+    if c1.button("👶 5–12"):
+        st.session_state.age_group = "kids"
+        st.rerun()
 
-    with col2:
-        if st.button("🎓 13–22"):
-            st.session_state.age_group = "youth"
+    if c2.button("🎓 13–22"):
+        st.session_state.age_group = "youth"
+        st.rerun()
 
-    with col3:
-        if st.button("👨‍💼 23–40"):
-            st.session_state.age_group = "adults"
+    if c3.button("👨‍💼 23–40"):
+        st.session_state.age_group = "adults"
+        st.rerun()
 
-    with col4:
-        if st.button("👵 40+"):
-            st.session_state.age_group = "elders"
+    if c4.button("👵 40+"):
+        st.session_state.age_group = "elders"
+        st.rerun()
 
     st.stop()
 
 
 # --------------------------------------------------
-# STEP 3 – SURVEY
+# SURVEY
 # --------------------------------------------------
 if not st.session_state.profile_built:
     answers = run_survey(st.session_state.age_group)
@@ -91,7 +88,7 @@ if not st.session_state.profile_built:
 
 
 # --------------------------------------------------
-# STEP 4 – ROUTE TO DASHBOARD
+# ROUTE TO DASHBOARD
 # --------------------------------------------------
 age = st.session_state.age_group
 
