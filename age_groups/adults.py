@@ -6,6 +6,10 @@ from modules.rewards import rewards_ui, add_points
 
 def adults_dashboard():
     st.title("👨‍💼 Adults Zone")
+    # ---------------- HOME BUTTON ----------------
+    if st.button("🏠 Home"):
+    st.session_state.page = "home"
+    st.rerun()
 
     # ---------------- USER INFO ----------------
     st.write(f"Welcome, **{st.session_state.user}**")
