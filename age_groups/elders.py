@@ -5,6 +5,10 @@ from modules.scoring import scoring_ui
 
 def elders_dashboard():
     st.title("👵 Elders Community")
+    # ---------------- HOME BUTTON ----------------
+    if st.button("🏠 Home"):
+    st.session_state.page = "home"
+    st.rerun()
 
     # ---------------- USER INFO ----------------
     st.write(f"Welcome, **{st.session_state.user}**")
