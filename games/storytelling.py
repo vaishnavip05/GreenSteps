@@ -1,20 +1,21 @@
 import streamlit as st
 from modules.scoring import add_score
+from gtts import gTTS
+import tempfile
 
 
 # --------------------------------------------------
 # SAMPLE STORY BANK
 # --------------------------------------------------
 STORIES = {
-    "The Talking Tree": 
+    "The Talking Tree":
     "One day, a little child met a tree who could talk. "
-    "The tree said, 'Save water and protect nature, and I will give you fresh air forever.' "
-    "The child promised to care for the Earth.",
+    "The tree said, save water and protect nature, "
+    "and I will give you fresh air forever.",
 
     "Captain Recycle":
     "Captain Recycle traveled across cities teaching people "
-    "how to separate waste. Soon the streets became clean "
-    "and everyone became eco heroes.",
+    "how to separate waste. Soon the streets became clean.",
 
     "The Last Drop":
     "A village almost ran out of water. A young girl taught "
@@ -31,8 +32,19 @@ def storytelling_ui():
     story_title = st.selectbox("Choose a story:", list(STORIES.keys()))
 
     if st.button("Tell me the story"):
+        text = STORIES[story_title]
+
+        # show text
         st.write("### ✨ कहानी / Story")
-        st.info(STORIES[story_title])
+        st.info(text)
+
+        # ---------------- TEXT TO SPEECH ----------------
+        tts = gTTS(text)
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+        tts.save(temp_file.name)
+
+        # play audio
+        st.audio(temp_file.name, format="audio/mp3")
 
         add_score(5)
         st.success("Great listening! +5 points 🌟")
