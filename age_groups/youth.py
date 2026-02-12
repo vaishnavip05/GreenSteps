@@ -10,7 +10,10 @@ from games.outfit_analysis import outfit_analysis_ui
 
 def youth_dashboard():
     st.title("🎓 Youth Zone")
-
+    # ---------------- HOME BUTTON ----------------
+    if st.button("🏠 Home"):
+    st.session_state.page = "home"
+    st.rerun()
     # ---------------- USER INFO ----------------
     st.write(f"Welcome, **{st.session_state.user}**")
     st.write("Awareness Level:", st.session_state.user_level)
