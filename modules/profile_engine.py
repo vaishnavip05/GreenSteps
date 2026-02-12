@@ -10,27 +10,24 @@ def build_profile(answers):
     # Save raw answers
     st.session_state.survey_answers = answers
 
-    # --------------------------------------------------
-    # Basic awareness score (temporary logic)
-    # --------------------------------------------------
+    # ---------------- Score ----------------
     score = 0
-
     for ans in answers.values():
         if ans == "Yes":
             score += 2
         elif ans == "Sometimes":
             score += 1
-        else:
-            score += 0
 
     st.session_state.awareness_score = score
 
-    # --------------------------------------------------
-    # Simple level mapping
-    # --------------------------------------------------
-    if score >= len(answers) * 2 * 0.7:
+    # ---------------- Level ----------------
+    total_questions = len(answers)
+
+    if total_questions == 0:
+        level = "Beginner"
+    elif score >= total_questions * 1.5:
         level = "Advanced"
-    elif score >= len(answers):
+    elif score >= total_questions:
         level = "Intermediate"
     else:
         level = "Beginner"
