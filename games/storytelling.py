@@ -35,7 +35,7 @@ def storytelling_ui():
         text = STORIES[story_title]
 
         # show text
-        st.write("### ✨ कहानी / Story")
+        st.write("Story")
         st.info(text)
 
         # ---------------- TEXT TO SPEECH ----------------
