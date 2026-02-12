@@ -1,7 +1,5 @@
 import streamlit as st
-
 from modules.community import community_ui
-from modules.donations import donation_ui
 from modules.scoring import scoring_ui
 
 
@@ -24,5 +22,19 @@ def elders_dashboard():
 
     st.divider()
 
-    # ---------------- DONATIONS ----------------
-    donation_ui()
+    # ---------------- MONEY DONATION ----------------
+    st.subheader("🤝 Support a Cause")
+
+    cause = st.selectbox(
+        "Choose where you want to contribute:",
+        ["Recycling", "Trees", "Money"]
+    )
+
+    amount = st.number_input("Enter donation amount (₹)", min_value=0)
+
+    if st.button("Donate Now"):
+        if amount > 0:
+            st.success(f"🙏 Thank you for donating ₹{amount} towards {cause}!")
+            st.balloons()
+        else:
+            st.warning("Please enter a valid amount.")
