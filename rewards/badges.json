@@ -1,1 +1,27 @@
-
+[
+  {
+    "name": "🌱 First Step",
+    "points_required": 10,
+    "description": "Completed your first eco action."
+  },
+  {
+    "name": "♻ Eco Starter",
+    "points_required": 30,
+    "description": "Started practicing sustainable habits."
+  },
+  {
+    "name": "🔥 Change Maker",
+    "points_required": 60,
+    "description": "Consistently making greener choices."
+  },
+  {
+    "name": "🌍 Planet Protector",
+    "points_required": 120,
+    "description": "Making strong environmental impact."
+  },
+  {
+    "name": "👑 Eco Champion",
+    "points_required": 200,
+    "description": "Top level sustainability hero."
+  }
+]
