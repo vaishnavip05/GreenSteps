@@ -7,7 +7,8 @@ def elders_dashboard():
     st.title("👵 Elders Community")
     # ---------------- HOME BUTTON ----------------
     if st.button("🏠 Home"):
-        st.session_state.page = "home"
+        st.session_state.age_group = None
+        st.session_state.profile_built = False
         st.rerun()
 
     # ---------------- USER INFO ----------------
