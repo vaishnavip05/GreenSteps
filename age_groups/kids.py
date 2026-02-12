@@ -13,7 +13,8 @@ def kids_dashboard():
     st.title("👶 Kids Zone")
     # ---------------- HOME BUTTON ----------------
     if st.button("🏠 Home"):
-        st.session_state.page = "home"
+        st.session_state.age_group = None
+        st.session_state.profile_built = False
         st.rerun()
     # ---------------- USER INFO ----------------
     st.write(f"Welcome, **{st.session_state.user}**")
