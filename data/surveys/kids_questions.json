@@ -1,1 +1,9 @@
-
+{
+  "questions": [
+    "Do you switch off lights when leaving a room?",
+    "Do you throw waste in the dustbin?",
+    "Do you carry a water bottle from home?",
+    "Have you planted a tree before?",
+    "Would you like to help Earth every day?"
+  ]
+}
