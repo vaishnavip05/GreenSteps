@@ -11,11 +11,10 @@ from games.trash_sorting import trash_sorting_ui
 
 def kids_dashboard():
     st.title("👶 Kids Zone")
-
-# ---------------- HOME BUTTON ----------------
+    # ---------------- HOME BUTTON ----------------
     if st.button("🏠 Home"):
-    st.session_state.page = "home"
-    st.rerun()
+        st.session_state.page = "home"
+        st.rerun()
     # ---------------- USER INFO ----------------
     st.write(f"Welcome, **{st.session_state.user}**")
     st.write("Awareness Level:", st.session_state.user_level)
