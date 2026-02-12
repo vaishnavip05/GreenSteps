@@ -37,7 +37,8 @@ def adults_dashboard():
     # ---------------- AI DECISION STUDIO ----------------
     st.subheader("🧠 AI Decision Studio")
 
-    with open("data/scenarios.json", "r") as f:
+    # ✅ FIXED PATH
+    with open("decision_studio/scenarios.json", "r") as f:
         scenarios = json.load(f)
 
     scenario = st.selectbox(
@@ -48,7 +49,6 @@ def adults_dashboard():
     selected = next(s for s in scenarios if s["title"] == scenario)
 
     option_names = [o["name"] for o in selected["options"]]
-
     choice = st.radio("What would you pick?", option_names)
 
     if st.button("Evaluate Decision"):
@@ -73,7 +73,7 @@ def adults_dashboard():
 
     cause = st.selectbox(
         "Choose where you want to contribute:",
-        ["Recycling", "Trees", "Water"]
+        ["Recycling", "Trees", "Money"]
     )
 
     amount = st.number_input("Enter donation amount (₹)", min_value=0)
